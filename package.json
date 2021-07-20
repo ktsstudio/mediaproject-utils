@@ -1,9 +1,9 @@
 {
-  "name": "@ktsstudio/utils",
+  "name": "@ktsstudio/mediaproject-utils",
   "version": "1.0.0",
   "author": "KTS Studio",
   "license": "MIT",
-  "description": "Package with basic utils for mediaprojects",
+  "description": "Package with basic utils for media projects",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
@@ -37,5 +37,14 @@
   },
   "dependencies": {
     "axios": "^0.21.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ktsstudio/front-utils.git"
+  },
+  "private": false,
+  "bugs": {
+    "url": "https://github.com/ktsstudio/front-utils/issues"
+  },
+  "homepage": "https://github.com/ktsstudio/front-utils#readme"
 }
