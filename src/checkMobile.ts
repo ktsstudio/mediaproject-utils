@@ -9,7 +9,7 @@ export default function checkMobile(): void {
       a.substr(0, 4)
     ))(navigator.userAgent || navigator.vendor || (window as any).opera);
 
-  window.isMobile = isMobile;
+  window.IS_MOBILE = isMobile;
 
   isMobile
     ? document.body.classList.add('mobile')

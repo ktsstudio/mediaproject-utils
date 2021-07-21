@@ -56,8 +56,8 @@ const markup: (markupConst: MakrupConst) => MarkupType = (
 
     this.checkMobile();
 
-    const width = window.isMobile ? this.const.mobileWidth : this.const.width;
-    const height = window.isMobile
+    const width = window.IS_MOBILE ? this.const.mobileWidth : this.const.width;
+    const height = window.IS_MOBILE
       ? this.const.mobileHeight
       : this.const.height;
 
@@ -104,7 +104,7 @@ const markup: (markupConst: MakrupConst) => MarkupType = (
         a.substr(0, 4)
       ))(navigator.userAgent || navigator.vendor || (window as any).opera);
 
-    window.isMobile = isMobile;
+    window.IS_MOBILE = isMobile;
 
     isMobile
       ? document.body.classList.add('mobile')

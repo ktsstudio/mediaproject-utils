@@ -1,3 +1,5 @@
+import noop from './noop';
+
 export const loadImage = async (
   src: string,
   onLoaded: () => void
@@ -14,7 +16,7 @@ export const loadImage = async (
 
 export default async (
   images: Array<string>,
-  onNextLoaded = () => null
+  onNextLoaded: () => void = noop
 ): Promise<void> => {
   await Promise.all(images.map((i) => loadImage(i, onNextLoaded)));
 };
