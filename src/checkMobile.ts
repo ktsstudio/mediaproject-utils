@@ -1,4 +1,9 @@
-export default function checkMobile(): void {
+/*
+ * Checks whether user agent fits mobile device.
+ * Sets field window.is_mobile = true and adds classname 'mobile' to document.body, if true.
+ * @returns Result of checking.
+ */
+export default function checkMobile(): boolean {
   const isMobile = ((a) =>
     /* eslint-disable-next-line */
     /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(
@@ -9,9 +14,11 @@ export default function checkMobile(): void {
       a.substr(0, 4)
     ))(navigator.userAgent || navigator.vendor || (window as any).opera);
 
-  window.IS_MOBILE = isMobile;
+  window.is_mobile = isMobile;
 
   isMobile
     ? document.body.classList.add('mobile')
     : document.body.classList.remove('mobile');
+
+  return isMobile;
 }

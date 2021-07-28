@@ -1,6 +1,18 @@
+### v2.0.0
+- [+] JSDoc
+- [+] Exported type Window
+- [*] All types moved to src/types
+- [-] checkIOS
+- [+] initializeAppParams
+- [+] fixActive
+- [*] README
+
+#### v1.0.2
+- [*] Code-style
+
 #### v1.0.1
 - [+] Метод проверки текущей платформы на IOS
 - [*] Поле IS_MOBILE в Window, типы
 
-#### v1.0.0
+### v1.0.0
 - [+] Базовые утилиты

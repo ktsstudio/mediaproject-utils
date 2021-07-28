@@ -1,9 +1,9 @@
-export interface LocalStorage {
-  setItem: (key: string, value: unknown) => void;
-  getItem: (key: string) => unknown;
-  removeItem: (key: string) => void;
-}
+import { LocalStorage } from './types/localStorage';
 
+/*
+ * Wrapper for Local Storage created in Window.
+ * @returns {LocalStorage} Instance of created storage.
+ */
 function getLocalStorage(): LocalStorage {
   window.__localstorage__ = {};
 
