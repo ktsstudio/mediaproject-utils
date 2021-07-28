@@ -2,24 +2,19 @@ import axios, { AxiosRequestConfig, AxiosResponse, Method } from 'axios';
 
 import get from './getter';
 import localStorage from './localStorage';
-
-export type ApiResponse<T> = {
-  response?: T;
-  error?: unknown;
-  errorData?: unknown;
-};
+import { ApiResponse } from './types/api';
 
 export function callApi(
   url: string,
   method: Method = 'GET',
   config: AxiosRequestConfig = {}
-): Promise<ApiResponse<any>> {
+): Promise<ApiResponse<unknown>> {
   return axios({
     method,
     url,
     ...config,
   }).then(
-    (result: AxiosResponse<any>) => {
+    (result: AxiosResponse<unknown>) => {
       if (result.status !== 200 && get(result, 'data.status') !== 'ok') {
         return Promise.reject(result);
       }
@@ -43,6 +38,17 @@ export function callApi(
   );
 }
 
+/*
+ * Method to send api request.
+ * @param {string} endpoint URL to send request to
+ * @param {Method} methodType Request method, default is 'GET'
+ * @param {any} data Request payload
+ * @param {AxiosRequestConfig} config Axios request config
+ * @param {boolean} multipartFormData If request has FormData
+ * @param {boolean} withToken For signed requests with token from local storage
+ * @returns {ApiResponse} Contains data in field response, if status was 200,
+ * otherwise contains error data in fields error and errorData.
+ */
 export default function api(
   endpoint: string,
   methodType: Method = 'GET',
@@ -50,7 +56,7 @@ export default function api(
   config: AxiosRequestConfig = {},
   multipartFormData = false,
   withToken = true
-): Promise<ApiResponse<any>> {
+): Promise<ApiResponse<unknown>> {
   const queryConfig = { ...config };
 
   if (
