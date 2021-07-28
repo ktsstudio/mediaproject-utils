@@ -8,13 +8,13 @@ export function callApi(
   url: string,
   method: Method = 'GET',
   config: AxiosRequestConfig = {}
-): Promise<ApiResponse<unknown>> {
+): Promise<ApiResponse<any>> {
   return axios({
     method,
     url,
     ...config,
   }).then(
-    (result: AxiosResponse<unknown>) => {
+    (result: AxiosResponse<any>) => {
       if (result.status !== 200 && get(result, 'data.status') !== 'ok') {
         return Promise.reject(result);
       }
@@ -56,7 +56,7 @@ export default function api(
   config: AxiosRequestConfig = {},
   multipartFormData = false,
   withToken = true
-): Promise<ApiResponse<unknown>> {
+): Promise<ApiResponse<any>> {
   const queryConfig = { ...config };
 
   if (
