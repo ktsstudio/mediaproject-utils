@@ -1,9 +1,14 @@
 {
   "name": "@ktsstudio/mediaproject-utils",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "author": "KTS Studio",
   "license": "MIT",
   "description": "Package with basic utils for media projects",
+  "keywords": [
+    "vk-mini-apps",
+    "axios",
+    "utils"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
@@ -22,6 +27,7 @@
     ]
   },
   "devDependencies": {
+    "@types/node": "^16.4.5",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.14.1",
     "eslint": "^7.31.0",

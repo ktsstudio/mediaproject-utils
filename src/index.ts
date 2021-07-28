@@ -3,13 +3,13 @@ import pluralize from './pluralize';
 import findGetParameter from './findGetParameter';
 import noop from './noop';
 import get from './getter';
-import localStorage, { LocalStorage } from './localStorage';
+import localStorage from './localStorage';
 import checkMobile from './checkMobile';
-import checkIOS from './checkIOS';
-import api, { ApiResponse, callApi } from './api';
-import markup, { MarkupType } from './markup';
+import api, { callApi } from './api';
+import markup from './markup';
 import randomNumber from './randomNumber';
 import copyToClipboard from './copyToClipboard';
+import initializeAppParams from './initializeAppParams';
 
 export {
   loadImages,
@@ -19,12 +19,17 @@ export {
   get,
   localStorage,
   checkMobile,
-  checkIOS,
   api,
   callApi,
   markup,
   randomNumber,
   copyToClipboard,
+  initializeAppParams,
 };
 
-export { ApiResponse, LocalStorage, MarkupType };
+import { ApiResponse } from './types/api';
+import { LocalStorage } from './types/localStorage';
+import { MakrupConst, MarkupType } from './types/markup';
+import { WindowType } from './types/window';
+
+export { ApiResponse, LocalStorage, MakrupConst, MarkupType, WindowType };

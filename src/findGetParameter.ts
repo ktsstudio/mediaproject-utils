@@ -1,8 +1,17 @@
-export default (parameterName: string, loc = ''): null | string => {
+/*
+ * Finds GET parameter.
+ * @param {string} parameterName Parameter to find
+ * @param {string} loc String where to search for parameter. Default is location.search
+ * @returns {null | string} Result of search
+ */
+export default (
+  parameterName: string,
+  loc = location.search
+): null | string => {
   let result: string | null = null,
     tmp: string[] = [];
 
-  (loc || location.search)
+  loc
     .substr(1)
     .split('&')
     .forEach((item: string) => {
