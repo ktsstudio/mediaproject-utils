@@ -1,3 +1,6 @@
+#### v2.0.1
+- [*] README
+
 ### v2.0.0
 - [+] JSDoc
 - [+] Exported type Window
