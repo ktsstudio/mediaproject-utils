@@ -10,6 +10,7 @@ import markup from './markup';
 import randomNumber from './randomNumber';
 import copyToClipboard from './copyToClipboard';
 import initializeAppParams from './initializeAppParams';
+import fixActive from './fixActive';
 
 export {
   loadImages,
@@ -25,6 +26,7 @@ export {
   randomNumber,
   copyToClipboard,
   initializeAppParams,
+  fixActive,
 };
 
 import { ApiResponse } from './types/api';
