@@ -27,4 +27,4 @@ Package with utils for media projects.
 * [ransomNumber](./src/randomNumber.ts) - random number getter
 
 ### Proposals & feedback
-Please, fell free to write on [hello@ktsstudio.ru](mailto:hello@ktsstudio.ru) with theme "create-mediaproject feedback"
+Please, fell free to write on [hello@ktsstudio.ru](mailto:hello@ktsstudio.ru) with theme "mediaproject-utils feedback"
