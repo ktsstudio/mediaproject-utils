@@ -19,8 +19,15 @@ const plural = (count: number, variants: string[]): string => {
 /*
  * Gets word plural ending depending on count.
  * @param {number} count Number of items
- * @param {string[]} variants Variants of word plural endings. Example: ['котов', 'кот', 'кота']
- * @returns {string} String with passed count and calculated plural ending.
+ * @param {string[]} variantsAfter Variants of word plural endings, placed after. Example: ['котов', 'кот', 'кота']
+ * @param {string[] | null} variantsBefore Variants of word plural endings, placed before. Example: ['пришли', 'пришел', 'пришли']
+ * @returns {string} String with passed count and calculated plural endings. For example, for passed count = 7 returned string will be 'пришли 7 котов'
  */
-export default (count: number, variants: string[]): string =>
-  `${count} ${plural(count, variants)}`;
+export default (
+  count: number,
+  variantsAfter: string[],
+  variantsBefore: string[] | null = null
+): string =>
+  `${
+    variantsBefore ? `${plural(count, variantsBefore)} ` : ''
+  }${count} ${plural(count, variantsAfter)}`;

@@ -1,3 +1,6 @@
+#### v2.0.5
+- [*] pluralize: added variants before count
+
 #### v2.0.4
 - [*] api type
 
