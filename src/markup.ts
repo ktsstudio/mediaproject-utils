@@ -1,4 +1,4 @@
-import { MakrupConst, MarkupType } from './types/markup';
+import { MarkupConst, MarkupType } from './types/markup';
 import checkMobile from './checkMobile';
 
 const defaultMarkupConst = {
@@ -12,7 +12,7 @@ const defaultMarkupConst = {
   maxFontSize: null,
 };
 
-const markup: (markupConst: MakrupConst) => MarkupType = (
+const markup: (markupConst?: MarkupConst) => MarkupType = (
   markupConst = defaultMarkupConst
 ) => ({
   const: markupConst,

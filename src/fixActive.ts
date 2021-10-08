@@ -1,6 +1,7 @@
+import noop from './noop';
 /*
-* Fix for :active.
-*/
-export default () => {
-  document.addEventListener('touchstart', () => {}, false);
+ * Fix for :active.
+ */
+export default (): void => {
+  document.addEventListener('touchstart', noop, false);
 };
