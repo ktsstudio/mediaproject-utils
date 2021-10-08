@@ -11,6 +11,10 @@ import randomNumber from './randomNumber';
 import copyToClipboard from './copyToClipboard';
 import initializeAppParams from './initializeAppParams';
 import fixActive from './fixActive';
+import { ApiResponse } from './types/api';
+import { LocalStorage } from './types/localStorage';
+import { MarkupConst, MarkupType } from './types/markup';
+import { WindowType } from './types/window';
 
 export {
   loadImages,
@@ -29,9 +33,4 @@ export {
   fixActive,
 };
 
-import { ApiResponse } from './types/api';
-import { LocalStorage } from './types/localStorage';
-import { MakrupConst, MarkupType } from './types/markup';
-import { WindowType } from './types/window';
-
-export { ApiResponse, LocalStorage, MakrupConst, MarkupType, WindowType };
+export { ApiResponse, LocalStorage, MarkupConst, MarkupType, WindowType };
