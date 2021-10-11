@@ -11,8 +11,11 @@ export interface MarkupConst {
 
 export interface MarkupType {
   const: MarkupConst;
+
   initResize: boolean;
   currentFontSize: number | null;
+  withCheckMobile: boolean;
+
   init: (maxFontSize?: number) => void;
   fit: VoidFunction;
   round: (value: number) => number;

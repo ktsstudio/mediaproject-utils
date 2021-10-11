@@ -1,3 +1,7 @@
+#### v2.0.6
+- [+] markup: optional parameter withCheckMobile
+- [*] markup: parameter markupConst is now optional
+
 #### v2.0.5
 - [*] pluralize: added variants before count
 

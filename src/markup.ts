@@ -12,12 +12,18 @@ const defaultMarkupConst = {
   maxFontSize: null,
 };
 
-const markup: (markupConst?: MarkupConst) => MarkupType = (
+const markup: (
+  withCheckMobile?: boolean,
+  markupConst?: MarkupConst
+) => MarkupType = (
+  withCheckMobile = true,
   markupConst = defaultMarkupConst
 ) => ({
   const: markupConst,
   initResize: false,
   currentFontSize: null,
+  withCheckMobile,
+
   init: function init(maxFontSize?: number): void {
     if (maxFontSize !== undefined) {
       this.const.maxFontSize = maxFontSize;
@@ -32,11 +38,14 @@ const markup: (markupConst?: MarkupConst) => MarkupType = (
       }
     };
   },
+
   fit: function fit(): void {
     const currentHeight = window.innerHeight;
     const currentWidth = window.innerWidth;
 
-    this.checkMobile();
+    if (this.withCheckMobile) {
+      this.checkMobile();
+    }
 
     const width = window.is_mobile ? this.const.mobileWidth : this.const.width;
     const height = window.is_mobile
@@ -72,10 +81,12 @@ const markup: (markupConst?: MarkupConst) => MarkupType = (
 
     document.documentElement.style.fontSize = `${this.currentFontSize}px`;
   },
+
   round: function round(value: number): number {
     return Math.round(value * 2) / 2;
   },
-  checkMobile: checkMobile,
+
+  checkMobile,
 });
 
 export default markup;
