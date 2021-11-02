@@ -1,6 +1,6 @@
 import { LocalStorage } from './types/localStorage';
 
-/*
+/**
  * Wrapper for Local Storage created in Window.
  * @returns {LocalStorage} Instance of created storage.
  */

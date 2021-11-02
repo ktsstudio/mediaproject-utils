@@ -26,5 +26,10 @@ Package with utils for media projects.
 * [pluralize](./src/pluralize.ts) - method choosing plural endings numbers
 * [ransomNumber](./src/randomNumber.ts) - random number getter
 
+### React hooks
+
+* [useAndroidKeyboard](./src/hooks/useAndroidKeyboard.ts) - React hook for tracking keyboard presence on android device
+* [useOrientationChange](./src/hooks/useOrientationChange.ts) - React hook for tracking screen orientation change on mobile device
+
 ### Proposals & feedback
 Please, fell free to write on [hello@ktsstudio.ru](mailto:hello@ktsstudio.ru) with theme "mediaproject-utils feedback"

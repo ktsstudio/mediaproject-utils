@@ -1,4 +1,4 @@
-/*
+/**
  * Gets random number.
  * @param {number} min Min value
  * @param {number} max Max value

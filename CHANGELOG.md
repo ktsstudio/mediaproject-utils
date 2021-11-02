@@ -1,3 +1,9 @@
+#### v2.1.0
+- [+] useAndroidKeyboard
+- [+] useOrientationChange
+- [*] fix JSDoc syntax
+- [*] checkMobile adds classname 'desktop'
+
 #### v2.0.5
 - [*] pluralize: added variants before count
 

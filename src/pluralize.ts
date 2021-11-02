@@ -16,7 +16,7 @@ const plural = (count: number, variants: string[]): string => {
   return variants[0];
 };
 
-/*
+/**
  * Gets word plural ending depending on count.
  * @param {number} count Number of items
  * @param {string[]} variantsAfter Variants of word plural endings, placed after. Example: ['котов', 'кот', 'кота']

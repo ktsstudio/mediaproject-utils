@@ -15,6 +15,7 @@ import { ApiResponse } from './types/api';
 import { LocalStorage } from './types/localStorage';
 import { MarkupConst, MarkupType } from './types/markup';
 import { WindowType } from './types/window';
+import { useAndroidKeyboard, useOrientationChange } from './hooks';
 
 export {
   loadImages,
@@ -31,6 +32,8 @@ export {
   copyToClipboard,
   initializeAppParams,
   fixActive,
+  useAndroidKeyboard,
+  useOrientationChange,
 };
 
 export { ApiResponse, LocalStorage, MarkupConst, MarkupType, WindowType };

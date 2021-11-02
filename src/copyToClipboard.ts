@@ -1,7 +1,8 @@
 import noop from './noop';
 
-/*
+/**
  * Wrapper for window.navigator.clipboard.writeText.
+ * @param {string} text Text to copy
  * @param {VoidFunction} onSuccess Success callback
  * @param {VoidFunction} onError Error callback
  */

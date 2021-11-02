@@ -1,5 +1,6 @@
 import noop from './noop';
-/*
+
+/**
  * Fix for :active.
  */
 export default (): void => {

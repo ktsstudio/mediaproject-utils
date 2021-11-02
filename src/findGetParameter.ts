@@ -1,4 +1,4 @@
-/*
+/**
  * Finds GET parameter.
  * @param {string} parameterName Parameter to find
  * @param {string} loc String where to search for parameter. Default is location.search

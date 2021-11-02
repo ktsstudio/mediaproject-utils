@@ -1,4 +1,4 @@
-/*
+/**
  * Initializes app parameter with writing them in Window.
  * Writes location params (search and location_hash), flag is_production
  */
