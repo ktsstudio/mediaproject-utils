@@ -1,6 +1,7 @@
 #### v2.1.0
 - [+] useAndroidKeyboard
 - [+] useOrientationChange
+- [+] useScrollToTop
 - [*] fix JSDoc syntax
 - [*] checkMobile adds classname 'desktop'
 

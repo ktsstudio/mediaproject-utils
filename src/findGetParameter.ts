@@ -1,8 +1,8 @@
 /**
- * Finds GET parameter.
- * @param {string} parameterName Parameter to find
- * @param {string} loc String where to search for parameter. Default is location.search
- * @returns {null | string} Result of search
+ * Находит GET параметр.
+ * @param {string} parameterName Параметр, который надо найти
+ * @param {string} loc Строка, где будет осуществляться поиск. По умолчанию location.search
+ * @returns {null | string} Результат поиска - значение переданного параметра или null, если параметр не был найден
  */
 export default (
   parameterName: string,

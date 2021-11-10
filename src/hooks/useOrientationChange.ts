@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-const getIsLandscape = () => window.innerWidth > window.innerHeight;
+const getIsLandscape = (): boolean => window.innerWidth > window.innerHeight;
 
 /**
- * Tracks screen orientation change on mobile device.
+ * Отслеживает текущую ориентацию мобильного устройства.
  * @param {boolean} isMobile
- * @returns {boolean} Result of checking if orientation is landscape.
+ * @returns {boolean} Результат проверки того, является ли текущая ориентация альбомной.
  */
 export default (isMobile: boolean): boolean => {
   const [isLandscape, setIsLandscape] = React.useState(

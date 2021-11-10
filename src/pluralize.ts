@@ -17,11 +17,11 @@ const plural = (count: number, variants: string[]): string => {
 };
 
 /**
- * Gets word plural ending depending on count.
- * @param {number} count Number of items
- * @param {string[]} variantsAfter Variants of word plural endings, placed after. Example: ['котов', 'кот', 'кота']
- * @param {string[] | null} variantsBefore Variants of word plural endings, placed before. Example: ['пришли', 'пришел', 'пришли']
- * @returns {string} String with passed count and calculated plural endings. For example, for passed count = 7 returned string will be 'пришли 7 котов'
+ * Определяет падежное окончание слова в зависимости от числа сущностей.
+ * @param {number} count Число сущностей
+ * @param {string[]} variantsAfter Варианты слова в разных падежах, которое будет добавлено после числа. Пример: ['котов', 'кот', 'кота']
+ * @param {string[] | null} variantsBefore Варианты слова в разных падежах, которое будет добавлено перед числом. Пример: ['пришли', 'пришел', 'пришли']
+ * @returns {string} Строка с переданным числом сущностей и вариантами слов перед числом и после в нужном падеже. Например, для count = 7 результатом будет строка 'пришли 7 котов'
  */
 export default (
   count: number,

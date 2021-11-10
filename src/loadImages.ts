@@ -1,9 +1,9 @@
 import noop from './noop';
 
 /**
- * Async wrapper for image.onload.
- * @param {string} src Image src
- * @param {VoidFunction} onLoaded Callback on image success load end
+ * Функция для загрузки изображения через image.onload через промис
+ * @param {string} src image.src
+ * @param {VoidFunction} onLoaded Колбэк на успешную загрузку изображения
  */
 export const loadImage = async (
   src: string,
@@ -20,9 +20,9 @@ export const loadImage = async (
   });
 
 /**
- * Method for async load of multiple images
- * @param {string[]} images Images src array
- * @param {VoidFunction} onNextLoaded Callback on every image success load end
+ * Утилита для асинхронной загрузки изображений
+ * @param {string[]} images Массив image.src
+ * @param {VoidFunction} onNextLoaded Колбэк, который вызывается после успешной загрузки каждого изображения
  */
 export default async (
   images: string[],

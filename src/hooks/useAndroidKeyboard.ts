@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * Tracks keyboard presence on android device.
+ * Отслеживает, открыта ли клавиатура на андроиде.
  * @param {boolean} isAndroid
  * @param {VoidFunction} onAppear
  * @param {VoidFunction} onDisappear

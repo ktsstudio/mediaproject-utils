@@ -1,7 +1,7 @@
 import noop from './noop';
 
 /**
- * Fix for :active.
+ * Фикс для :active.
  */
 export default (): void => {
   document.addEventListener('touchstart', noop, false);

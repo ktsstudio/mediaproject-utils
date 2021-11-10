@@ -1,10 +1,10 @@
 import noop from './noop';
 
 /**
- * Wrapper for window.navigator.clipboard.writeText.
- * @param {string} text Text to copy
- * @param {VoidFunction} onSuccess Success callback
- * @param {VoidFunction} onError Error callback
+ * Утилита для копирования текста в буфер обмена.
+ * @param {string} text Текст, который надо скопировать.
+ * @param {VoidFunction} onSuccess Колбэк, вызываемый в результате успеха.
+ * @param {VoidFunction} onError Колбэк, вызываемый в случае ошибки.
  */
 export default (
   text: string,
