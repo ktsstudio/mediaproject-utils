@@ -30,7 +30,7 @@
 
 * [useAndroidKeyboard](./src/hooks/useAndroidKeyboard.ts) - хук для отслеживания открытия клавиатуры на андроиде
 * [useOrientationChange](./src/hooks/useOrientationChange.ts) - хук для определения изменения ориентации мобильного устройства
-* [useScrollToTop](./src/hooks/useScrollToTop.ts) - хук для прокрутки страницы на верх
+* [useScrollTop](./src/hooks/useScrollTop.ts) - хук для прокрутки страницы на верх
 
 
 ### Обратная связь
