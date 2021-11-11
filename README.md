@@ -16,7 +16,7 @@
 * [checkMobile](./src/checkMobile.ts) - утилита для проверки, является ли текущий девайс мобильным устройством. Осуществляет проверку путем применения регулярного выражения к user agent
 * [copyToClipboard](./src/copyToClipboard.ts) - утилита для копирования в буфер
 * [findGetParameter](./src/findGetParameter.ts) - утилита для парсинга квери параметров
-* [fixActive](./src/fixActive.ts) - утилита для отключения :active
+* [fixActive](./src/fixActive.ts) - утилита для отключения :active для safari
 * [getter](./src/getter.ts) - геттер для вложенных полей объектов
 * [initializeAppParams](./src/initializeAppParams.ts) - утилита для инициализации медиапроекта с инициализацией основных параметров и их записи в localStorage
 * [loadImages](./src/loadImages.ts) - утилита для загрузки изображений на промисах
