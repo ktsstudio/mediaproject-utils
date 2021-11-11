@@ -3,15 +3,18 @@ import * as React from 'react';
 /**
  * Осуществляет прокрутку страницы на верх.
  * @param {Array<any>} dependencies
+ * @param {boolean} condition
  */
-const useScrollTop = (dependencies = []) => {
+const useScrollTop = (dependencies = [], condition = true) => {
   React.useEffect(() => {
-    try {
-      window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-    } catch (error) {
-      window.scrollTo(0, 0);
+    if (condition) {
+      try {
+        window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+      } catch (error) {
+        window.scrollTo(0, 0);
+      }
     }
-  }, dependencies);
+  }, [...dependencies, condition]);
 };
 
 export default useScrollTop;
