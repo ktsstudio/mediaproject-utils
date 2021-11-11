@@ -1,8 +1,8 @@
 import { LocalStorage } from './types/localStorage';
 
-/*
- * Wrapper for Local Storage created in Window.
- * @returns {LocalStorage} Instance of created storage.
+/**
+ * Обертка над Local Storage, хранящаяся в Window.
+ * @returns {LocalStorage} Текущее состояние хранилища.
  */
 function getLocalStorage(): LocalStorage {
   window.__localstorage__ = {};
