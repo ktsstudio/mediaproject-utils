@@ -6,14 +6,12 @@ import get from './getter';
 import localStorage from './localStorage';
 import checkMobile from './checkMobile';
 import api, { callApi } from './api';
-import markup from './markup';
 import randomNumber from './randomNumber';
 import copyToClipboard from './copyToClipboard';
 import initializeAppParams from './initializeAppParams';
 import fixActive from './fixActive';
 import { ApiResponse } from './types/api';
 import { LocalStorage } from './types/localStorage';
-import { MarkupConst, MarkupType } from './types/markup';
 import { WindowType } from './types/window';
 import { useAndroidKeyboard, useOrientationChange } from './hooks';
 
@@ -27,7 +25,6 @@ export {
   checkMobile,
   api,
   callApi,
-  markup,
   randomNumber,
   copyToClipboard,
   initializeAppParams,
@@ -36,4 +33,4 @@ export {
   useOrientationChange,
 };
 
-export { ApiResponse, LocalStorage, MarkupConst, MarkupType, WindowType };
+export { ApiResponse, LocalStorage, WindowType };

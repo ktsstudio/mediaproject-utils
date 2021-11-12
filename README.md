@@ -21,7 +21,6 @@
 * [initializeAppParams](./src/initializeAppParams.ts) - утилита для инициализации медиапроекта с инициализацией основных параметров и их записи в localStorage
 * [loadImages](./src/loadImages.ts) - утилита для загрузки изображений на промисах
 * [localStorage](./src/localStorage.ts) - имитация localStorage, хранимая в Window
-* [markup](./src/markup.ts) - утилита для адаптивной верстки на rem
 * [noop](./src/noop.ts) - просто пустая функция
 * [pluralize](./src/pluralize.ts) - утилита определения падежного окончания слова в зависимости от числа сущностей
 * [randomNumber](./src/randomNumber.ts) - генератор случайных чисел
