@@ -1,6 +1,13 @@
 ### v3.0.0
 - [-] markup перемещен в @ktsstudio/mediaproject-styles
 
+#### v2.1.0
+- [+] useAndroidKeyboard
+- [+] useOrientationChange
+- [+] useScrollTop
+- [*] fix JSDoc syntax
+- [*] checkMobile adds classname 'desktop'
+
 #### v2.0.6
 - [+] markup: optional parameter withCheckMobile
 - [*] markup: parameter markupConst is now optional

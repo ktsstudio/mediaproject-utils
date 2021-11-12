@@ -2,28 +2,36 @@
 
 # @ktsstudio/mediaproject-utils
 
-Package with utils for media projects.
+Общие утилиты для медиапроектов.
 
-### Usage
+### Использование
 
 `npm install @ktsstudio/mediaproject-utils`
 
 `yarn add @ktsstudio/mediaproject-utils`
 
-### Methods
+### Утилиты
 
-* [api](./src/api.ts) - method for sending api requests
-* [checkMobile](./src/checkMobile.ts) - method to check if current device is mobile by testing user agent
-* [copyToClipboard](./src/copyToClipboard.ts) - wrapper method for copying text to clipboard
-* [findGetParameter](./src/findGetParameter.ts) - method to find GET parameters in locations search
-* [fixActive](./src/fixActive.ts) - method to disable :active
-* [getter](./src/getter.ts) - getter for object nested fields
-* [initializeAppParams](./src/initializeAppParams.ts) - method for reading app initial params and writing them to local storage
-* [loadImages](./src/loadImages.ts) - promisified wrapper for image.onload
-* [localStorage](./src/localStorage.ts) - Local Storage wrapper created in Window
-* [noop](./src/noop.ts) - empty function
-* [pluralize](./src/pluralize.ts) - method choosing plural endings numbers
-* [ransomNumber](./src/randomNumber.ts) - random number getter
+* [api](./src/api.ts) - утилита для отправки запросов к api. Работает поверх axios
+* [checkMobile](./src/checkMobile.ts) - утилита для проверки, является ли текущий девайс мобильным устройством. Осуществляет проверку путем применения регулярного выражения к user agent
+* [copyToClipboard](./src/copyToClipboard.ts) - утилита для копирования в буфер
+* [findGetParameter](./src/findGetParameter.ts) - утилита для парсинга квери параметров
+* [fixActive](./src/fixActive.ts) - утилита для отключения :active для safari
+* [getter](./src/getter.ts) - геттер для вложенных полей объектов
+* [initializeAppParams](./src/initializeAppParams.ts) - утилита для инициализации медиапроекта с инициализацией основных параметров и их записи в localStorage
+* [loadImages](./src/loadImages.ts) - утилита для загрузки изображений на промисах
+* [localStorage](./src/localStorage.ts) - имитация localStorage, хранимая в Window
+* [noop](./src/noop.ts) - просто пустая функция
+* [pluralize](./src/pluralize.ts) - утилита определения падежного окончания слова в зависимости от числа сущностей
+* [randomNumber](./src/randomNumber.ts) - генератор случайных чисел
 
-### Proposals & feedback
-Please, fell free to write on [hello@ktsstudio.ru](mailto:hello@ktsstudio.ru) with theme "mediaproject-utils feedback"
+### Хуки
+
+* [useAndroidKeyboard](./src/hooks/useAndroidKeyboard.ts) - хук для отслеживания открытия клавиатуры на андроиде
+* [useOrientationChange](./src/hooks/useOrientationChange.ts) - хук для определения изменения ориентации мобильного устройства
+* [useScrollTop](./src/hooks/useScrollTop.ts) - хук для прокрутки страницы на верх
+
+
+### Обратная связь
+
+Любой фидбэк вы можете передать нам на почту [hello@ktsstudio.ru](mailto:hello@ktsstudio.ru) в письме с темой "mediaproject-utils"

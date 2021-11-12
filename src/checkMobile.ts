@@ -1,7 +1,8 @@
-/*
- * Checks whether user agent fits mobile device.
- * Sets field window.is_mobile = true and adds classname 'mobile' to document.body, if true.
- * @returns Result of checking.
+/**
+ * Проверяет по user agent, является ли девайс мобильным устройством.
+ * Устанавливает поле window.is_mobile = true, если мобильное устройство.
+ * Добавляет класс 'mobile' или 'desktop' на document.body в зависимости от результата проверки.
+ * @returns Результат проверки.
  */
 export default function checkMobile(): boolean {
   const isMobile = ((a) =>
@@ -15,10 +16,7 @@ export default function checkMobile(): boolean {
     ))(navigator.userAgent || navigator.vendor || (window as any).opera);
 
   window.is_mobile = isMobile;
-
-  isMobile
-    ? document.body.classList.add('mobile')
-    : document.body.classList.remove('mobile');
+  document.body.classList.add(isMobile ? 'mobile' : 'desktop');
 
   return isMobile;
 }
