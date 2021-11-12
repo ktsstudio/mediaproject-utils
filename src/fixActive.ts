@@ -1,6 +1,7 @@
 import noop from './noop';
-/*
- * Fix for :active.
+
+/**
+ * Фикс для :active для safari.
  */
 export default (): void => {
   document.addEventListener('touchstart', noop, false);

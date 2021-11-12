@@ -13,6 +13,7 @@ import fixActive from './fixActive';
 import { ApiResponse } from './types/api';
 import { LocalStorage } from './types/localStorage';
 import { WindowType } from './types/window';
+import { useAndroidKeyboard, useOrientationChange } from './hooks';
 
 export {
   loadImages,
@@ -28,6 +29,8 @@ export {
   copyToClipboard,
   initializeAppParams,
   fixActive,
+  useAndroidKeyboard,
+  useOrientationChange,
 };
 
 export { ApiResponse, LocalStorage, WindowType };

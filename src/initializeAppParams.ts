@@ -1,6 +1,6 @@
-/*
- * Initializes app parameter with writing them in Window.
- * Writes location params (search and location_hash), flag is_production
+/**
+ * Инициализирует параметры приложения, записывая их в Window.
+ * Записывает параметры location (search и location_hash), флаг is_production
  */
 export default (): void => {
   window.search = location.search;
