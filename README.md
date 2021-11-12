@@ -21,7 +21,6 @@ Package with utils for media projects.
 * [initializeAppParams](./src/initializeAppParams.ts) - method for reading app initial params and writing them to local storage
 * [loadImages](./src/loadImages.ts) - promisified wrapper for image.onload
 * [localStorage](./src/localStorage.ts) - Local Storage wrapper created in Window
-* [markup](./src/markup.ts) - tool for content resize via CSS rem
 * [noop](./src/noop.ts) - empty function
 * [pluralize](./src/pluralize.ts) - method choosing plural endings numbers
 * [ransomNumber](./src/randomNumber.ts) - random number getter
