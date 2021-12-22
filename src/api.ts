@@ -38,16 +38,16 @@ export function callApi(
   );
 }
 
-/*
- * Method to send api request.
- * @param {string} endpoint URL to send request to
- * @param {Method} methodType Request method, default is 'GET'
- * @param {any} data Request payload
- * @param {AxiosRequestConfig} config Axios request config
- * @param {boolean} multipartFormData If request has FormData
- * @param {boolean} withToken For signed requests with token from local storage
- * @returns {ApiResponse} Contains data in field response, if status was 200,
- * otherwise contains error data in fields error and errorData.
+/**
+ * Метод для отправки запроса к API.
+ * @param {string} endpoint URL, на который нужно отправить запрос
+ * @param {Method} methodType Метод запроса, по умолчанию 'GET'
+ * @param {any} data Тело запроса либо GET-параметры в виде объекта
+ * @param {AxiosRequestConfig} config Конфиг axios
+ * @param {boolean} multipartFormData Содержит ли запрос данные формы
+ * @param {boolean} withToken Для запросов с токеном из local storage
+ * @returns {ApiResponse} Если статус ответа 200, возвращает поле response с ответом от сервера,
+ * иначе поля error and errorData с информацией об ошибке.
  */
 export default function api(
   endpoint: string,

@@ -30,6 +30,10 @@
 * [useAndroidKeyboard](./src/hooks/useAndroidKeyboard.ts) - хук для отслеживания открытия клавиатуры на андроиде
 * [useOrientationChange](./src/hooks/useOrientationChange.ts) - хук для определения изменения ориентации мобильного устройства
 * [useScrollTop](./src/hooks/useScrollTop.ts) - хук для прокрутки страницы на верх
+* [orientationContext](./src/hooks/orientationContext.tsx) - хук для получения ориентации мобильного устройства из контекста и компонент-провайдер
+* [usePolling](./src/hooks/usePolling.ts) - хук для поллинга
+* [usePreviousState](./src/hooks/usePreviousState.ts) - хук для получения предыдущего значения переменной
+* [useValueTransition](./src/hooks/useValueTransition.ts) - хук для получения измененного значение переменной с задержкой
 
 
 ### Обратная связь

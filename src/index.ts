@@ -1,5 +1,5 @@
 import loadImages from './loadImages';
-import pluralize from './pluralize';
+import pluralize, { plural } from './pluralize';
 import findGetParameter from './findGetParameter';
 import noop from './noop';
 import get from './getter';
@@ -12,16 +12,28 @@ import initializeAppParams from './initializeAppParams';
 import fixActive from './fixActive';
 import { ApiResponse } from './types/api';
 import { LocalStorage } from './types/localStorage';
+import { PluralizeWordsType } from './types/pluralize';
 import { WindowType } from './types/window';
-import { useAndroidKeyboard, useOrientationChange } from './hooks';
+import {
+  useAndroidKeyboard,
+  useOrientationChange,
+  useScrollTop,
+  useValueTransition,
+  usePreviousState,
+  usePolling,
+  OrientationProvider,
+  useOrientationContext,
+} from './hooks';
 
 export {
   loadImages,
   pluralize,
+  plural,
   findGetParameter,
   noop,
   get,
   localStorage,
+  PluralizeWordsType,
   checkMobile,
   api,
   callApi,
@@ -31,6 +43,12 @@ export {
   fixActive,
   useAndroidKeyboard,
   useOrientationChange,
+  useScrollTop,
+  useValueTransition,
+  usePreviousState,
+  usePolling,
+  OrientationProvider,
+  useOrientationContext,
 };
 
 export { ApiResponse, LocalStorage, WindowType };
