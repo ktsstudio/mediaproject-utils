@@ -3,7 +3,7 @@
 - [+] usePolling
 - [+] usePreviousState
 - [+] useValueTransition
-- [+] в initializeAppParams устанавливается поле is_dev
+- [*] в initializeAppParams устанавливается поле is_dev
 - [*] изменена сигнатура метода pluralize, добавлен метод plural
 - [*] в randomNumber добавлена возможность получать дробное число
 

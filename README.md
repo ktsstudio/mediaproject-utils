@@ -33,7 +33,7 @@
 * [orientationContext](./src/hooks/orientationContext.tsx) - хук для получения ориентации мобильного устройства из контекста и компонент-провайдер
 * [usePolling](./src/hooks/usePolling.ts) - хук для поллинга
 * [usePreviousState](./src/hooks/usePreviousState.ts) - хук для получения предыдущего значения переменной
-* [useValueTransition](./src/hooks/useValueTransition.ts) - хук для получения измененного значение переменной с задержкой
+* [useValueTransition](./src/hooks/useValueTransition.ts) - хук для получения измененного значения переменной с задержкой
 
 
 ### Обратная связь

@@ -33,7 +33,6 @@ export {
   noop,
   get,
   localStorage,
-  PluralizeWordsType,
   checkMobile,
   api,
   callApi,
@@ -51,4 +50,4 @@ export {
   useOrientationContext,
 };
 
-export { ApiResponse, LocalStorage, WindowType };
+export { ApiResponse, LocalStorage, PluralizeWordsType, WindowType };
