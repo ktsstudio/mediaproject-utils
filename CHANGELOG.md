@@ -3,6 +3,7 @@
 - [+] usePolling
 - [+] usePreviousState
 - [+] useValueTransition
+- [*] api принимает объект типа UrlConfigType
 - [+] checkDev
 - [*] в initializeAppParams устанавливается поле is_dev
 - [*] изменена сигнатура метода pluralize, добавлен метод plural

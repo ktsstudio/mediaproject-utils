@@ -11,7 +11,7 @@ import randomNumber from './randomNumber';
 import copyToClipboard from './copyToClipboard';
 import initializeAppParams from './initializeAppParams';
 import fixActive from './fixActive';
-import { ApiResponse } from './types/api';
+import { ApiResponse, UrlConfigType } from './types/api';
 import { LocalStorage } from './types/localStorage';
 import { PluralizeWordsType } from './types/pluralize';
 import { WindowType } from './types/window';
@@ -52,4 +52,10 @@ export {
   useOrientationContext,
 };
 
-export { ApiResponse, LocalStorage, PluralizeWordsType, WindowType };
+export {
+  ApiResponse,
+  UrlConfigType,
+  LocalStorage,
+  PluralizeWordsType,
+  WindowType,
+};
