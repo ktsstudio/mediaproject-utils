@@ -4,6 +4,7 @@ import findGetParameter from './findGetParameter';
 import noop from './noop';
 import get from './getter';
 import localStorage from './localStorage';
+import checkDev from './checkDev';
 import checkMobile from './checkMobile';
 import api, { callApi } from './api';
 import randomNumber from './randomNumber';
@@ -33,6 +34,7 @@ export {
   noop,
   get,
   localStorage,
+  checkDev,
   checkMobile,
   api,
   callApi,
