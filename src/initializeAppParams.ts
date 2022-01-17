@@ -9,5 +9,5 @@ export default (): void => {
   window.location_hash = location.hash;
 
   window.is_production = process.env.NODE_ENV === 'production';
-  checkDev(window.is_production);
+  checkDev();
 };

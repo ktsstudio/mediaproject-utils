@@ -9,8 +9,7 @@ export function callApi(
   config: AxiosRequestConfig = {}
 ): Promise<ApiResponse<any>> {
   return axios({
-    method: urlConfig.method,
-    url: urlConfig.url,
+    ...urlConfig,
     ...config,
   }).then(
     (result: AxiosResponse<any>) => {
