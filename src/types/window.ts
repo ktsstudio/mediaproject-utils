@@ -7,6 +7,7 @@ export interface WindowType {
   location_hash: string;
 
   is_production: boolean;
+  is_dev: boolean;
 
   is_mobile: boolean;
   is_ios: boolean;

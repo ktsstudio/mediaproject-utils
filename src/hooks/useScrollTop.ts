@@ -5,7 +5,7 @@ import * as React from 'react';
  * @param {Array<any>} dependencies
  * @param {boolean} condition
  */
-const useScrollTop = (dependencies = [], condition = true) => {
+const useScrollTop = (dependencies = [], condition = true): void => {
   React.useEffect(() => {
     if (condition) {
       try {

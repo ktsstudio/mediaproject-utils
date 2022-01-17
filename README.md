@@ -13,6 +13,7 @@
 ### Утилиты
 
 * [api](./src/api.ts) - утилита для отправки запросов к api. Работает поверх axios
+* [checkDev](./src/checkDev.ts) - утилита для проверки, соответствуют ли домен приложения или адрес api девовской среде
 * [checkMobile](./src/checkMobile.ts) - утилита для проверки, является ли текущий девайс мобильным устройством. Осуществляет проверку путем применения регулярного выражения к user agent
 * [copyToClipboard](./src/copyToClipboard.ts) - утилита для копирования в буфер
 * [findGetParameter](./src/findGetParameter.ts) - утилита для парсинга квери параметров
@@ -30,6 +31,10 @@
 * [useAndroidKeyboard](./src/hooks/useAndroidKeyboard.ts) - хук для отслеживания открытия клавиатуры на андроиде
 * [useOrientationChange](./src/hooks/useOrientationChange.ts) - хук для определения изменения ориентации мобильного устройства
 * [useScrollTop](./src/hooks/useScrollTop.ts) - хук для прокрутки страницы на верх
+* [orientationContext](./src/hooks/orientationContext.tsx) - хук для получения ориентации мобильного устройства из контекста и компонент-провайдер
+* [usePolling](./src/hooks/usePolling.ts) - хук для поллинга
+* [usePreviousState](./src/hooks/usePreviousState.ts) - хук для получения предыдущего значения переменной
+* [useValueTransition](./src/hooks/useValueTransition.ts) - хук для получения измененного значения переменной с задержкой
 
 
 ### Обратная связь

@@ -2,7 +2,7 @@
  * Проверяет по user agent, является ли девайс мобильным устройством.
  * Устанавливает поле window.is_mobile = true, если мобильное устройство.
  * Добавляет класс 'mobile' или 'desktop' на document.body в зависимости от результата проверки.
- * @returns Результат проверки.
+ * @returns {boolean} Результат проверки.
  */
 export default function checkMobile(): boolean {
   const isMobile = ((a) =>

@@ -1,3 +1,14 @@
+### v4.0.0
+- [+] OrientationProvider, useOrientationContext
+- [+] usePolling
+- [+] usePreviousState
+- [+] useValueTransition
+- [*] api принимает объект типа UrlConfigType
+- [+] checkDev
+- [*] в initializeAppParams устанавливается поле is_dev
+- [*] изменена сигнатура метода pluralize, добавлен метод plural
+- [*] в randomNumber добавлена возможность получать дробное число
+
 ### v3.0.0
 - [-] markup перемещен в @ktsstudio/mediaproject-styles
 
