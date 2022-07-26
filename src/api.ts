@@ -1,113 +1,76 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
-import get from './getter';
 import localStorage from './localStorage';
-import { ApiResponse, UrlConfigType } from './types/api';
+import createMultipartFormData from './utils/createMultipartFormData';
+import {
+  EndpointType,
+  RequestParamsType,
+  ApiResponseType,
+  ResponseType,
+} from './types/api';
 
-export function callApi(
-  urlConfig: UrlConfigType,
+export function callApi<R = any, E = any>(
+  endpoint: EndpointType,
   config: AxiosRequestConfig = {}
-): Promise<ApiResponse<any>> {
+): Promise<AxiosResponse<ApiResponseType<R, E>>> {
   return axios({
-    ...urlConfig,
+    ...endpoint,
     ...config,
-  }).then(
-    (result: AxiosResponse<any>) => {
-      if (result.status !== 200 && get(result, 'data.status') !== 'ok') {
-        return Promise.reject(result);
-      }
-
-      if (get(result, 'data.status') === 'error') {
-        return Promise.reject(result);
-      }
-
-      const response =
-        get(result, 'data.data') || get(result, 'data') || result;
-
-      if (response.token) {
-        localStorage.setItem('token', response.token);
-      }
-
-      return response;
-    },
-    (error) => {
-      return Promise.reject(error);
-    }
-  );
+  });
 }
 
-/**
- * Метод для отправки запроса к api.
- * @param {UrlConfigType} urlConfig URL, на который нужно отправить запрос, вместе с методом запроса
- * @param {any} data Тело запроса либо GET-параметры в виде объекта
- * @param {AxiosRequestConfig} config Конфиг axios
- * @param {boolean} multipartFormData Содержит ли запрос данные формы
- * @param {boolean} withToken Для запросов с токеном из local storage
- * @returns {ApiResponse} Если статус ответа 200, возвращает поле response с ответом от сервера,
- * иначе поля error and errorData с информацией об ошибке.
- */
-export default function api(
-  urlConfig: UrlConfigType,
-  data: null | undefined | any = {},
-  config: AxiosRequestConfig = {},
-  multipartFormData = false,
-  withToken = true
-): Promise<ApiResponse<any>> {
-  const queryConfig = { ...config };
+export default async function api<R = any, E = any>({
+  endpoint: { url, method = 'GET' },
+  data = {},
+  config = {},
+  withToken = true,
+  withMultipartFormData = false,
+}: RequestParamsType): Promise<ResponseType<R, E>> {
+  const requestConfig = { ...config };
 
-  if (
-    (queryConfig.data === null || queryConfig.data === undefined) &&
-    urlConfig.method !== 'GET'
-  ) {
-    queryConfig.data = data;
+  if (!requestConfig.headers) {
+    requestConfig.headers = {};
   }
 
-  if (!queryConfig.headers) {
-    queryConfig.headers = {};
+  if (withToken) {
+    const token = localStorage.getItem('token');
+
+    requestConfig.headers = {
+      ...requestConfig.headers,
+      Authorization: `Bearer ${token}`,
+    };
   }
 
-  if (multipartFormData) {
-    const formData = new FormData();
-    Object.keys(data).forEach((key) => {
-      const value = data[key];
-      if (Array.isArray(value)) {
-        value.forEach((item) => {
-          formData.append(key, item);
-        });
-      } else {
-        formData.append(key, value);
-      }
-    });
-    queryConfig.data = formData;
+  if (withMultipartFormData) {
+    requestConfig.data = createMultipartFormData(data);
 
-    Object.assign(queryConfig.headers, {
+    requestConfig.headers = {
+      ...requestConfig.headers,
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       'Content-Type': 'multipart/form-data',
-    });
-  }
-
-  if (localStorage.getItem('token') && withToken) {
-    Object.assign(queryConfig.headers, {
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
-    });
-  }
-
-  if (urlConfig.method === 'GET') {
-    queryConfig.params = {
-      ...data,
-      uid: localStorage.getItem('userId'),
     };
+  }
+
+  if (method.toUpperCase() === 'GET') {
+    requestConfig.params = { ...data };
   } else {
-    queryConfig.params = {
-      uid: localStorage.getItem('userId'),
-    };
+    requestConfig.data = { ...data };
   }
 
-  return callApi(urlConfig, queryConfig)
-    .then((response) => ({ response }))
-    .catch((error) => {
-      return {
-        error,
-        errorData: get(error, 'response.data') || {},
-      };
-    });
+  return callApi<R, E>(
+    {
+      url,
+      method,
+    },
+    requestConfig
+  )
+    .then((response) => ({
+      isError: response.data.status !== 'ok',
+      response: response.data.data,
+    }))
+    .catch((error) => ({
+      isError: true,
+      error,
+      errorData: error.response.data,
+    }));
 }

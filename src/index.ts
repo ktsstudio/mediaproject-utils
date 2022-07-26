@@ -11,7 +11,7 @@ import randomNumber from './randomNumber';
 import copyToClipboard from './copyToClipboard';
 import initializeAppParams from './initializeAppParams';
 import fixActive from './fixActive';
-import { ApiResponse, UrlConfigType } from './types/api';
+import { ApiResponseType, EndpointType } from './types/api';
 import { LocalStorage } from './types/localStorage';
 import { PluralizeWordsType } from './types/pluralize';
 import { WindowType } from './types/window';
@@ -53,8 +53,8 @@ export {
 };
 
 export {
-  ApiResponse,
-  UrlConfigType,
+  ApiResponseType,
+  EndpointType,
   LocalStorage,
   PluralizeWordsType,
   WindowType,

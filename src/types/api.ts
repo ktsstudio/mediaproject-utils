@@ -1,15 +1,33 @@
-import { Method } from 'axios';
+import { AxiosRequestConfig, Method } from 'axios';
 
-/**
- * Тип данных, возвращаемых в запросе к api.
- */
-export type ApiResponse<T> = {
-  response?: T;
-  error?: unknown;
-  errorData?: unknown;
-};
-
-export type UrlConfigType = {
+export type EndpointType = {
   url: string;
   method?: Method;
+};
+
+export type ApiResponseErrorDataType<D = any> = {
+  code: string;
+  http_status: number;
+  message: string;
+  data: D;
+};
+
+export type ApiResponseType<R = any, E = ApiResponseErrorDataType<any>> = {
+  status: 'ok' | 'error';
+  data?: R | E;
+};
+
+export type RequestParamsType = {
+  endpoint: EndpointType;
+  data?: Record<string, any>;
+  config?: AxiosRequestConfig;
+  withToken?: boolean;
+  withMultipartFormData?: boolean;
+};
+
+export type ResponseType<R = any, E = ApiResponseErrorDataType<any>> = {
+  isError: boolean;
+  response?: R | E;
+  error?: any;
+  errorData?: E;
 };
