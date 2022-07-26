@@ -1,21 +1,43 @@
-import { LocalStorage } from './types/localStorage';
+import logError from './utils/logError';
 
-/**
- * Обертка над Local Storage, хранящаяся в Window.
- * @returns {LocalStorage} Текущее состояние хранилища.
- */
-function getLocalStorage(): LocalStorage {
-  window.__localstorage__ = {};
+interface ILocalStorage {
+  setItem: (key: string, value: any) => void;
+  getItem: (key: string) => any;
+  removeItem: (key: string) => void;
+}
 
-  return {
-    setItem: (key, value) => {
-      window.__localstorage__[key] = value;
-    },
-    getItem: (key) => window.__localstorage__[key],
-    removeItem: (key) => {
-      delete window.__localstorage__[key];
-    },
+class LocalStorage implements ILocalStorage {
+  constructor() {
+    window.__localStorage__ = {};
+  }
+
+  private _parser = (value: any): any => {
+    try {
+      return JSON.parse(value);
+    } catch (error) {
+      logError('could not parse value from localStorage', error);
+    }
+
+    return value;
+  };
+
+  setItem = (key: string, value: any): void => {
+    window.localStorage.setItem(key, JSON.stringify(value));
+    window.__localStorage__[key] = value;
+  };
+
+  getItem = (key: string): any => {
+    const valueFromLS = this._parser(window.localStorage.getItem(key));
+    const valueFromWindow = window.__localStorage__[key];
+
+    return valueFromLS || valueFromWindow;
+  };
+
+  removeItem = (key: string) => {
+    window.localStorage.removeItem(key);
+    delete window.__localStorage__[key];
   };
 }
 
-export default getLocalStorage();
+const localStorage = new LocalStorage();
+export default localStorage;
