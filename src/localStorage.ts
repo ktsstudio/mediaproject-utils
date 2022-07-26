@@ -6,6 +6,11 @@ interface ILocalStorage {
   removeItem: (key: string) => void;
 }
 
+/**
+ * Обертка над Local Storage, позволяющая взаимодействовать с
+ * __localStorage__ в Window и обычным localStorage.
+ * @returns {LocalStorage} Текущее состояние хранилища.
+ */
 class LocalStorage implements ILocalStorage {
   constructor() {
     window.__localStorage__ = {};

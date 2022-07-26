@@ -19,6 +19,17 @@ export function callApi<R = any, E = any>(
   });
 }
 
+/**
+ * Метод для отправки запроса к api.
+ * @param {EndpointType} endpoint Объект с информацией об эндпоинте - URL и метод
+ * @param {Record<string, any>} data Тело запроса либо GET-параметры в виде объекта
+ * @param {AxiosRequestConfig} config Конфиг axios
+ * @param {boolean} withToken Для запросов с токеном из local storage
+ * @param {boolean} withMultipartFormData Содержит ли запрос данные формы
+ * @returns {ApiResponse} Если статус ответа 200, возвращает поле response с ответом от сервера,
+ * иначе поля error and errorData с информацией об ошибке. Также возвращает флаг isError
+ * обозначающий наличие ошибки
+ */
 export default async function api<R = any, E = any>({
   endpoint: { url, method = 'GET' },
   data = {},
