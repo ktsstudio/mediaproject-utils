@@ -27,15 +27,15 @@ export const plural = (count: number, variants: PluralizeWordsType): string => {
 /**
  * Определяет падежное окончание слова в зависимости от числа сущностей и формирует строку с числом и глаголом (опционально).
  * @param {number} count Число сущностей
- * @param {PluralizeWordsType} variantsAfter Варианты слова в разных падежах, которое будет добавлено после числа. Пример: { one: 'кот', two: 'кота', five: 'котов' }
+ * @param {PluralizeWordsType | null} variantsAfter Варианты слова в разных падежах, которое будет добавлено после числа. Пример: { one: 'кот', two: 'кота', five: 'котов' }
  * @param {PluralizeWordsType | null} variantsBefore Варианты слова в разных падежах, которое будет добавлено перед числом. Пример: { one: 'пришел', two: 'пришли', five: 'пришли' }
  * @returns {string} Строка с переданным числом сущностей и вариантами слов перед числом и после в нужном падеже. Например, для count = 7 результатом будет строка 'пришли 7 котов'
  */
 export default (
   count: number,
-  variantsAfter: PluralizeWordsType,
+  variantsAfter: PluralizeWordsType | null = null,
   variantsBefore: PluralizeWordsType | null = null
 ): string =>
-  `${
-    variantsBefore ? `${plural(count, variantsBefore)} ` : ''
-  }${count} ${plural(count, variantsAfter)}`;
+  `${variantsBefore ? `${plural(count, variantsBefore)} ` : ''}${count}${
+    variantsAfter ? ` ${plural(count, variantsAfter)}` : ''
+  }`;
