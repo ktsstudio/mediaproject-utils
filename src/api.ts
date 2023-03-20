@@ -105,6 +105,7 @@ export default function api<R = any, E = any>(
     .then((response) => ({ response: response as R }))
     .catch((error) => {
       const responseError = get(error, 'response.data');
+
       return {
         error,
         errorData: responseError ? (responseError as E) : undefined,
