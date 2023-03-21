@@ -21,8 +21,7 @@ export function callApi(
         return Promise.reject(result);
       }
 
-      const response =
-        get(result, 'data.data') || get(result, 'data') || result;
+      const response = get(result, 'data.data') || get(result, 'data');
 
       if (response.token) {
         localStorage.setItem('token', response.token);
@@ -46,13 +45,13 @@ export function callApi(
  * @returns {ApiResponse} Если статус ответа 200, возвращает поле response с ответом от сервера,
  * иначе поля error and errorData с информацией об ошибке.
  */
-export default function api(
+export default function api<R = any, E = any>(
   urlConfig: UrlConfigType,
   data: null | undefined | any = {},
   config: AxiosRequestConfig = {},
   multipartFormData = false,
   withToken = true
-): Promise<ApiResponse<any>> {
+): Promise<ApiResponse<R, E>> {
   const queryConfig = { ...config };
 
   if (
@@ -103,11 +102,13 @@ export default function api(
   }
 
   return callApi(urlConfig, queryConfig)
-    .then((response) => ({ response }))
+    .then((response) => ({ response: response as R }))
     .catch((error) => {
+      const responseError = get(error, 'response.data');
+
       return {
         error,
-        errorData: get(error, 'response.data') || {},
+        errorData: responseError ? (responseError as E) : undefined,
       };
     });
 }

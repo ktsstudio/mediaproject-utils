@@ -1,3 +1,10 @@
+## v4.1.0
+- [*] pluralize: добавлена возможность не указывать variantsAfter
+- [*] api: функция callApi больше не возвращает весь объект с ответом, если поле data пустое
+- [*] api: можно передать ожидаемый тип ответа
+- [+] splitIntoLines
+- [+] sleep
+
 ### v4.0.0
 - [+] OrientationProvider, useOrientationContext
 - [+] usePolling

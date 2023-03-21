@@ -11,6 +11,8 @@ import randomNumber from './randomNumber';
 import copyToClipboard from './copyToClipboard';
 import initializeAppParams from './initializeAppParams';
 import fixActive from './fixActive';
+import splitIntoLines from './splitIntoLines';
+import sleep from './sleep';
 import { ApiResponse, UrlConfigType } from './types/api';
 import { LocalStorage } from './types/localStorage';
 import { PluralizeWordsType } from './types/pluralize';
@@ -50,6 +52,8 @@ export {
   usePolling,
   OrientationProvider,
   useOrientationContext,
+  splitIntoLines,
+  sleep,
 };
 
 export {
