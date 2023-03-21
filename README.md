@@ -25,6 +25,8 @@
 * [noop](./src/noop.ts) - просто пустая функция
 * [pluralize](./src/pluralize.ts) - утилита определения падежного окончания слова в зависимости от числа сущностей
 * [randomNumber](./src/randomNumber.ts) - генератор случайных чисел
+* [sleep](./src/sleep.ts) - утилита для задержки выполнения кода
+* [splitIntoLines](./src/splitIntoLines.tsx) - утилита для разделения текста на строки по разделителю
 
 ### Хуки
 
