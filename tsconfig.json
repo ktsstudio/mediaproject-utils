@@ -12,11 +12,10 @@
     "strictNullChecks": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "suppressImplicitAnyIndexErrors": true
+    "allowSyntheticDefaultImports": true
   },
-  "exclude": ["node_modules", "packages/*/node_modules"],
   "main": "./src/index.ts",
   "types": "./types/typings.d.ts",
-  "include": ["src", "types"]
+  "include": ["src", "types"],
+  "exclude": ["node_modules", "packages/*/node_modules"]
 }
