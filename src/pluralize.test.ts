@@ -1,7 +1,7 @@
 import { random, range } from 'lodash';
 
-import pluralize, { plural } from '../pluralize';
-import { PluralizeWordsType } from '../types/pluralize';
+import pluralize, { plural } from './pluralize';
+import { PluralizeWordsType } from './types/pluralize';
 
 const variants: PluralizeWordsType = {
   one: 'кот',

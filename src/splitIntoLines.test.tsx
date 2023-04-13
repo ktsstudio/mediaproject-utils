@@ -1,6 +1,6 @@
 import { cleanup, render } from '@testing-library/react';
 
-import splitIntoLines from '../splitIntoLines';
+import splitIntoLines from './splitIntoLines';
 
 afterEach(cleanup);
 
