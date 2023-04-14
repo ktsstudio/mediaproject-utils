@@ -14,12 +14,9 @@ type TestBundle = (
   ...args: RestParams
 ) => void;
 
-const testBundle: TestBundle = (
-  title,
-  splitter = '\n',
-  divider,
-  lineBreak = true
-) => {
+const testBundle: TestBundle = (title, splitter = '\n', divider, lineBreak) => {
+  const isLineBreak = lineBreak ?? true;
+
   describe(title, () => {
     test('для пустой строки', () => {
       const { container } = render(splitIntoLines('', divider, lineBreak));
@@ -30,7 +27,7 @@ const testBundle: TestBundle = (
     test('для строки без символа переноса', () => {
       const { container } = render(splitIntoLines('Hello', divider, lineBreak));
 
-      const expected = lineBreak ? 'Hello' : '<span>Hello</span>';
+      const expected = isLineBreak ? 'Hello' : '<span>Hello</span>';
 
       expect(container).toContainHTML(expected);
     });
@@ -40,7 +37,7 @@ const testBundle: TestBundle = (
         splitIntoLines(`Hello${splitter}World`, divider, lineBreak)
       );
 
-      const expected = lineBreak
+      const expected = isLineBreak
         ? 'Hello<br>World'
         : '<span>Hello</span><span>World</span>';
 
@@ -56,7 +53,7 @@ const testBundle: TestBundle = (
         )
       );
 
-      const expected = lineBreak
+      const expected = isLineBreak
         ? 'Hello<br>Big<br>World'
         : '<span>Hello</span><span>Big</span><span>World</span>';
 
@@ -71,7 +68,7 @@ const testBundle: TestBundle = (
           lineBreak
         )
       );
-      const expected = lineBreak
+      const expected = isLineBreak
         ? 'Hello<br><br><br>World'
         : '<span>Hello</span><span></span><span></span><span>World</span>';
 
