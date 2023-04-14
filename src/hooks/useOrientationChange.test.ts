@@ -91,6 +91,9 @@ describe('Тест хука useOrientationChange:', () => {
 
       expect(addEventListenerMock).toBeCalledTimes(1);
       expect(removeEventListenerMock).toBeCalledTimes(1);
+
+      expect(addEventListenerMock.mock.lastCall?.[0]).toBe('resize');
+      expect(removeEventListenerMock.mock.lastCall?.[0]).toBe('resize');
     });
 
     test('должен реагировать на изменение размера окна', () => {
