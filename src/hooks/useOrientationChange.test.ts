@@ -1,49 +1,17 @@
-import { renderHook, act } from '@testing-library/react';
+import { renderHook } from '@testing-library/react';
+
+import {
+  expectWindowSize,
+  fireResize,
+  mockWindowEventHooks,
+  setWindowSize,
+  windowKind,
+} from '__tests__/utils/window';
 
 import useOrientationChange from './useOrientationChange';
 
-enum SizeEnum {
-  big = 1200,
-  small = 300,
-}
-
-type Size = {
-  width: SizeEnum;
-  height: SizeEnum;
-};
-
-const screenSize = {
-  wide: { width: SizeEnum.big, height: SizeEnum.small },
-  narrow: { width: SizeEnum.small, height: SizeEnum.big },
-  square: { width: SizeEnum.big, height: SizeEnum.big },
-} as const;
-
-const setWindowSize = ({ width, height }: Size) => {
-  window.innerWidth = width;
-  window.innerHeight = height;
-};
-
-const expectWindowSize = ({ width, height }: Size) => {
-  expect(window.innerWidth).toEqual(width);
-  expect(window.innerHeight).toEqual(height);
-};
-
-const fireResize = (size: Size) => {
-  setWindowSize(size);
-  act(() => window.dispatchEvent(new Event('resize')));
-};
-
-const mockWindowEventHooks = () => ({
-  addEventListenerMock: jest
-    .spyOn(window, 'addEventListener')
-    .mockImplementation(),
-  removeEventListenerMock: jest
-    .spyOn(window, 'removeEventListener')
-    .mockImplementation(),
-});
-
 beforeEach(() => {
-  setWindowSize(screenSize.wide);
+  setWindowSize(windowKind.wide);
 });
 
 afterEach(() => {
@@ -55,25 +23,25 @@ describe('Тест хука useOrientationChange:', () => {
     test('должен возвращать true для широкого экрана', () => {
       const { result } = renderHook(() => useOrientationChange(true));
 
-      expectWindowSize(screenSize.wide);
+      expectWindowSize(windowKind.wide);
       expect(result.current).toEqual(true);
     });
 
     test('должен возвращать false для узкого экрана', () => {
-      setWindowSize(screenSize.narrow);
+      setWindowSize(windowKind.narrow);
 
       const { result } = renderHook(() => useOrientationChange(true));
 
-      expectWindowSize(screenSize.narrow);
+      expectWindowSize(windowKind.narrow);
       expect(result.current).toEqual(false);
     });
 
     test('должен возвращать false для квадратного экрана', () => {
-      setWindowSize(screenSize.square);
+      setWindowSize(windowKind.square);
 
       const { result } = renderHook(() => useOrientationChange(true));
 
-      expectWindowSize(screenSize.square);
+      expectWindowSize(windowKind.square);
       expect(result.current).toEqual(false);
     });
 
@@ -99,15 +67,15 @@ describe('Тест хука useOrientationChange:', () => {
     test('должен реагировать на изменение размера окна', () => {
       const { result } = renderHook(() => useOrientationChange(true));
 
-      expectWindowSize(screenSize.wide);
+      expectWindowSize(windowKind.wide);
       expect(result.current).toEqual(true);
 
-      fireResize(screenSize.narrow);
-      expectWindowSize(screenSize.narrow);
+      fireResize(windowKind.narrow);
+      expectWindowSize(windowKind.narrow);
       expect(result.current).toEqual(false);
 
-      fireResize(screenSize.wide);
-      expectWindowSize(screenSize.wide);
+      fireResize(windowKind.wide);
+      expectWindowSize(windowKind.wide);
       expect(result.current).toEqual(true);
     });
   });
@@ -116,25 +84,25 @@ describe('Тест хука useOrientationChange:', () => {
     test('должен возвращать false для широкого экрана', () => {
       const { result } = renderHook(() => useOrientationChange(false));
 
-      expectWindowSize(screenSize.wide);
+      expectWindowSize(windowKind.wide);
       expect(result.current).toEqual(false);
     });
 
     test('должен возвращать false для узкого экрана', () => {
-      setWindowSize(screenSize.narrow);
+      setWindowSize(windowKind.narrow);
 
       const { result } = renderHook(() => useOrientationChange(false));
 
-      expectWindowSize(screenSize.narrow);
+      expectWindowSize(windowKind.narrow);
       expect(result.current).toEqual(false);
     });
 
     test('должен возвращать false для квадратного экрана', () => {
-      setWindowSize(screenSize.square);
+      setWindowSize(windowKind.square);
 
       const { result } = renderHook(() => useOrientationChange(false));
 
-      expectWindowSize(screenSize.square);
+      expectWindowSize(windowKind.square);
       expect(result.current).toEqual(false);
     });
 
