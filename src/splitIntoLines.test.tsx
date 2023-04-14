@@ -14,18 +14,25 @@ type TestBundle = (
   ...args: RestParams
 ) => void;
 
-const testBundle: TestBundle = (title, splitter = '\n', divider, lineBreak) => {
+const testBundle: TestBundle = (
+  title,
+  splitter = '\n',
+  divider,
+  lineBreak = true
+) => {
   describe(title, () => {
     test('для пустой строки', () => {
       const { container } = render(splitIntoLines('', divider, lineBreak));
 
-      expect(container).toContainHTML('<span></span>');
+      expect(container).toBeEmptyDOMElement();
     });
 
     test('для строки без символа переноса', () => {
       const { container } = render(splitIntoLines('Hello', divider, lineBreak));
 
-      expect(container).toContainHTML('<span>Hello</span>');
+      const expected = lineBreak ? 'Hello' : '<span>Hello</span>';
+
+      expect(container).toContainHTML(expected);
     });
 
     test('для строки c одним символом переноса', () => {
@@ -33,10 +40,9 @@ const testBundle: TestBundle = (title, splitter = '\n', divider, lineBreak) => {
         splitIntoLines(`Hello${splitter}World`, divider, lineBreak)
       );
 
-      const expected =
-        lineBreak ?? true
-          ? '<span>Hello<br></span><span>World</span>'
-          : '<span>Hello</span><span>World</span>';
+      const expected = lineBreak
+        ? 'Hello<br>World'
+        : '<span>Hello</span><span>World</span>';
 
       expect(container).toContainHTML(expected);
     });
@@ -50,10 +56,9 @@ const testBundle: TestBundle = (title, splitter = '\n', divider, lineBreak) => {
         )
       );
 
-      const expected =
-        lineBreak ?? true
-          ? '<span>Hello<br></span><span>Big<br></span><span>World</span>'
-          : '<span>Hello</span><span>Big</span><span>World</span>';
+      const expected = lineBreak
+        ? 'Hello<br>Big<br>World'
+        : '<span>Hello</span><span>Big</span><span>World</span>';
 
       expect(container).toContainHTML(expected);
     });
@@ -66,10 +71,9 @@ const testBundle: TestBundle = (title, splitter = '\n', divider, lineBreak) => {
           lineBreak
         )
       );
-      const expected =
-        lineBreak ?? true
-          ? '<span>Hello<br></span><span><br></span><span><br></span><span>World</span>'
-          : '<span>Hello</span><span></span><span></span><span>World</span>';
+      const expected = lineBreak
+        ? 'Hello<br><br><br>World'
+        : '<span>Hello</span><span></span><span></span><span>World</span>';
 
       expect(container).toContainHTML(expected);
     });

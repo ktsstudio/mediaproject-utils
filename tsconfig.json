@@ -12,7 +12,8 @@
     "strictNullChecks": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
   },
   "main": "./src/index.ts",
   "types": "./types/typings.d.ts",
