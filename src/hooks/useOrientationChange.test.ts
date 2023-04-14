@@ -53,14 +53,21 @@ describe('Тест хука useOrientationChange:', () => {
         useOrientationChange(true)
       );
 
+      expect(addEventListenerMock).toBeCalledTimes(1);
+      expect(addEventListenerMock.mock.lastCall?.[0]).toBe('resize');
+      expect(removeEventListenerMock).not.toBeCalled();
+
+      addEventListenerMock.mockReset();
+
       rerender();
+
+      expect(addEventListenerMock).not.toBeCalled();
+      expect(removeEventListenerMock).not.toBeCalled();
 
       unmount();
 
-      expect(addEventListenerMock).toBeCalledTimes(1);
+      expect(addEventListenerMock).not.toBeCalled();
       expect(removeEventListenerMock).toBeCalledTimes(1);
-
-      expect(addEventListenerMock.mock.lastCall?.[0]).toBe('resize');
       expect(removeEventListenerMock.mock.lastCall?.[0]).toBe('resize');
     });
 
