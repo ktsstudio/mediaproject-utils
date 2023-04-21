@@ -22,8 +22,12 @@ const getSecondLastDigit = (x: number): number => dropLastDigits(x) % 10;
 
 const MAX_NUMBER = dropLastDigits(Number.MAX_SAFE_INTEGER, 2) * 10;
 
+const addEnding = (num: number, ending: number): number => {
+  return num * 10 + ending;
+};
+
 const getRandomIntegerWithEnding = (ending: number): number => {
-  return dropLastDigits(random(MAX_NUMBER)) * 10 + ending;
+  return addEnding(dropLastDigits(random(MAX_NUMBER)), ending);
 };
 
 const LOOP_COUNT = 10;
@@ -57,7 +61,7 @@ describe(`Тест функции <plural> для слова "${variants.one}"`,
     });
 
     let caseFive = range(5, 10);
-    caseFive = [0, ...caseFive, ...caseFive.map((x, i) => (i + 2) * 10 + x)];
+    caseFive = [0, ...caseFive, ...caseFive.map((x, i) => addEnding(i + 2, x))];
 
     describe(buildTitle(caseFive, variants.five), () => {
       caseFive.forEach((count) => {
@@ -165,7 +169,7 @@ describe(`Тест функции <pluralize> для  слова "${variants.one
     });
 
     let caseFive = range(5, 10);
-    caseFive = [0, ...caseFive, ...caseFive.map((x, i) => (i + 2) * 10 + x)];
+    caseFive = [0, ...caseFive, ...caseFive.map((x, i) => addEnding(i + 2, x))];
 
     describe(buildTitle(caseFive, `_ ${variants.five}`), () => {
       caseFive.forEach((count) => {
@@ -219,7 +223,7 @@ describe(`Тест функции <pluralize> для  слова "${variants.one
     });
 
     let caseFive = range(5, 10);
-    caseFive = [0, ...caseFive, ...caseFive.map((x, i) => (i + 2) * 10 + x)];
+    caseFive = [0, ...caseFive, ...caseFive.map((x, i) => addEnding(i + 2, x))];
 
     describe(buildTitle(caseFive, `${variantsBefore.five} _`), () => {
       caseFive.forEach((count) => {
@@ -283,7 +287,7 @@ describe(`Тест функции <pluralize> для  слова "${variants.one
     );
 
     let caseFive = range(5, 10);
-    caseFive = [0, ...caseFive, ...caseFive.map((x, i) => (i + 2) * 10 + x)];
+    caseFive = [0, ...caseFive, ...caseFive.map((x, i) => addEnding(i + 2, x))];
 
     describe(
       buildTitle(caseFive, `${variantsBefore.five} _ ${variants.five}`),

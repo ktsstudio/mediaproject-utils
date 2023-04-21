@@ -16,7 +16,7 @@
     "rm-build": "rm -rf dist",
     "lint": "eslint src --fix",
     "codestyle": "prettier --write \"src/**/*.{ts,js}?(x)\"",
-    "tsc-check": "tsc --skipLibCheck --noEmit --pretty --project tsconfig.json",
+    "tsc-check": "tsc --skipLibCheck --noEmit --project tsconfig.json",
     "build": "yarn run rm-build; tsc --project tsconfig.build.json --module es6 --target es6 --outDir dist --declarationDir dist/types",
     "build:cjs": "yarn run rm-build; tsc --project tsconfig.build.json --module commonjs --target es5 --outDir dist --declarationDir dist/types",
     "precommit": "yarn run tsc-check && lint-staged",

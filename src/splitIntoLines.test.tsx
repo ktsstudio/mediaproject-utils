@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+import '@testing-library/jest-dom';
 import { cleanup, render } from '@testing-library/react';
 
 import splitIntoLines from './splitIntoLines';

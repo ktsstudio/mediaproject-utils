@@ -9,8 +9,7 @@ const tsAliases = pathsToModuleNameMapper(compilerOptions.paths, {
 
 const config: Config = {
   verbose: false,
-  testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  testEnvironment: 'node',
   moduleNameMapper: tsAliases,
   modulePathIgnorePatterns: ['<rootDir>/src/__tests__/utils/'],
   transform: {
