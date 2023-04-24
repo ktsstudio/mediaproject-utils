@@ -23,8 +23,8 @@ export function callApi(
 
       const response = get(result, 'data.data') || get(result, 'data');
 
-      if (response.token) {
-        localStorage.setItem('token', response.token);
+      if (get(response, 'token')) {
+        localStorage.setItem('token', get(response, 'token'));
       }
 
       return response;

@@ -13,15 +13,31 @@ export default (
   divider: string | RegExp = '\n',
   lineBreak = true
 ): JSX.Element => {
+  if (text.length === 0) {
+    return <Fragment />;
+  }
+
   const lines = text.split(divider);
+
+  if (lineBreak) {
+    const lastIndex = lines.length - 1;
+
+    return (
+      <>
+        {lines.map((line, index) => (
+          <Fragment key={index}>
+            {line}
+            {index !== lastIndex && <br />}
+          </Fragment>
+        ))}
+      </>
+    );
+  }
 
   return (
     <>
       {lines.map((line, index) => (
-        <span key={index}>
-          {line}
-          {lineBreak && index !== lines.length - 1 && <br />}
-        </span>
+        <span key={index}>{line}</span>
       ))}
     </>
   );

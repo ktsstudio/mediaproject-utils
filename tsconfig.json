@@ -13,10 +13,17 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "suppressImplicitAnyIndexErrors": true
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./src",
+    "paths": {
+      "__tests__/*": ["__tests__/*"],
+      "types/*": ["types/*"],
+      "hooks/*": ["hooks/*"]
+    }
   },
-  "exclude": ["node_modules", "packages/*/node_modules"],
   "main": "./src/index.ts",
   "types": "./types/typings.d.ts",
-  "include": ["src", "types"]
+  "include": ["src", "types"],
+  "exclude": ["node_modules", "packages/*/node_modules"]
 }
