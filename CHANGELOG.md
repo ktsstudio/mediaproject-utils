@@ -4,6 +4,9 @@
 - [*] обновлены скрипты сборки для исключения тестовых файлов и утилит
 - [+] покрыты тестами: `pluralize`, `splitIntoLines`, `useOrientationChange`, `useAndroidKeyboard`, `usePolling`
 - [*] `splitIntoLines`: в режиме разделения строк переносами теперь не оборачивает фрагменты строк в `span`
+- [*] поднята версия `axios` до версии, используемой в шаблонах
+- [*] исправлен [баг в api](https://github.com/ktsstudio/mediaproject-utils/issues/15)
+- [*] `findGetParameter`: вместо `substr` используется `substring`
 
 ## v4.1.0
 

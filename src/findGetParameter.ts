@@ -12,7 +12,7 @@ export default (
     tmp: string[] = [];
 
   loc
-    .substr(1)
+    .substring(1)
     .split('&')
     .forEach((item: string) => {
       tmp = item.split('=');
