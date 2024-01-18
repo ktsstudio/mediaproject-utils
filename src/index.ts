@@ -9,7 +9,6 @@ import checkMobile from './checkMobile';
 import api, { callApi } from './api';
 import randomNumber from './randomNumber';
 import copyToClipboard from './copyToClipboard';
-import initializeAppParams from './initializeAppParams';
 import fixActive from './fixActive';
 import splitIntoLines from './splitIntoLines';
 import sleep from './sleep';
@@ -42,7 +41,6 @@ export {
   callApi,
   randomNumber,
   copyToClipboard,
-  initializeAppParams,
   fixActive,
   useAndroidKeyboard,
   useOrientationChange,
