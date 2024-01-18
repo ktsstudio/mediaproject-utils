@@ -33,7 +33,6 @@ const getOutput = () => ({
 });
 
 const getModule = (format) => ({
-  external: ['axios'],
   input: `${INPUT_DIR}index.ts`,
   plugins: getPlugins(`${OUTPUT_DIR}${format}/`, IS_PRODUCTION),
   output: {
