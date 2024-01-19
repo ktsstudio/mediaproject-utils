@@ -14,9 +14,10 @@
       "__tests__/*": ["__tests__/*"],
       "types/*": ["types/*"],
       "hooks/*": ["hooks/*"]
-    }
+    },
+    "types": ["axios", "react", "lodash", "node"]
   },
   "main": "./src/index.ts",
-  "include": ["src", "types"],
-  "exclude": ["node_modules", "packages/*/node_modules"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
