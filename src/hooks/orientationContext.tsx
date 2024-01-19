@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { useOrientationChange } from './index';
+import useOrientationChange from './useOrientationChange';
 
 const OrientationContext = React.createContext({
   isLandscape: false,
