@@ -1,11 +1,13 @@
 /**
  * Проверяет, соответствуют ли домен приложения или адрес api девовской среде.
- * @param {string} devDomain Строка, содержащаяся в девовском домене, по умолчанию ktsdev
  * @param {boolean} isProduction Продовская ли среда
+ * @param apiUrl URL к API
+ * @param {string} devDomain Строка, содержащаяся в девовском домене, по умолчанию ktsdev
  * @return {boolean} Результат проверки
  */
 export default function checkDev(
   isProduction: boolean,
+  apiUrl: string,
   devDomain = 'ktsdev'
 ): boolean {
   let isDev: boolean;
@@ -16,7 +18,7 @@ export default function checkDev(
 
     isDev =
       domain?.includes(devDomain) ||
-      process.env.API_URL?.includes(devDomain) ||
+      apiUrl?.includes(devDomain) ||
       !isProduction;
   } catch (e) {
     isDev = false;
