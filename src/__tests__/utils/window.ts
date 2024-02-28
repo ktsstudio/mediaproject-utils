@@ -1,4 +1,3 @@
-import { isNumber } from 'lodash';
 import { act } from 'react-dom/test-utils';
 
 export enum WindowSizeEnum {
@@ -10,6 +9,15 @@ type Size = {
   width: number;
   height: number;
 };
+
+/**
+ * Проверяет, является ли значение числом. Это замена оригинальной функции `isNumber` из библиотеки lodash.
+ * @param {any} value - Значение, которое необходимо проверить.
+ * @returns {boolean} Возвращает `true`, если значение является числом, иначе `false`.
+ */
+function isNumber(value: any): value is number {
+  return typeof value === 'number';
+}
 
 export const windowKind = {
   wide: { width: WindowSizeEnum.big, height: WindowSizeEnum.small },

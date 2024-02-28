@@ -1,5 +1,3 @@
-import { random, range } from 'lodash';
-
 import pluralize, { plural } from './pluralize';
 import { PluralizeWordsType } from './types/pluralize';
 
@@ -14,6 +12,30 @@ const variantsBefore: PluralizeWordsType = {
   two: 'пришли',
   five: 'пришли',
 };
+
+/**
+ * Генерирует случайное число в заданном диапазоне. Это замена оригинальной функции `random` из библиотеки lodash.
+ * @param {number} min - Нижняя граница диапазона.
+ * @param {number} [max=0] - Верхняя граница диапазона. По умолчанию равна 0. Если передано только одно значение, оно будет считаться верхней границей, а нижней границей будет 0.
+ * @returns {number} Возвращает случайное число в заданном диапазоне.
+ */
+function random(min: number, max: number = 0): number {
+  if (min < max) {
+      [min, max] = [max, min];
+  }
+  return Math.floor(Math.random() * (min - max + 1)) + max;
+}
+
+/**
+ * Создает массив чисел, увеличивающихся на единицу, начиная с начального числа и заканчивая конечным числом. 
+ * Это замена оригинальной функции `range` из библиотеки lodash.
+ * @param {number} start - Начальное число диапазона.
+ * @param {number} end - Конечное число диапазона.
+ * @returns {number[]} Возвращает новый массив чисел от `start` до `end`.
+ */
+function range(start: number, end: number): number[] {
+  return Array.from({length: (end - start)}, (_, i) => start + i);
+}
 
 const dropLastDigits = (x: number, count = 1): number =>
   Math.floor(x / 10 ** count);

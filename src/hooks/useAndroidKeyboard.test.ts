@@ -3,7 +3,6 @@
  */
 
 import { renderHook } from '@testing-library/react';
-import { noop } from 'lodash';
 
 import {
   WindowSizeEnum,
@@ -14,6 +13,7 @@ import {
 } from '__tests__/utils/window';
 
 import useAndroidKeyboard from './useAndroidKeyboard';
+import noop from "../noop";
 
 const KEYBOARD_HEIGHT_IN_PERCENT = 21;
 
