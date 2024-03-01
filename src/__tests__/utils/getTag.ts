@@ -7,10 +7,9 @@
  * @param {any} value - Значение для получения его тега.
  * @returns {string} Возвращает строковое представление типа значения.
  */
-export function getTag(value: any) {
+export function getTag(value: any):string {
     if (value == null) {
       return value === undefined ? '[object Undefined]' : '[object Null]'
     }
     return toString.call(value)
   }
-  

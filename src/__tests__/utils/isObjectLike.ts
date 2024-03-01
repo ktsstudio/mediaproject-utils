@@ -4,6 +4,6 @@
  * @param {any} value - Значение для проверки.
  * @returns {boolean} Возвращает `true`, если `value` похоже на объект, иначе `false`.
  */
-export function isObjectLike(value: any) {
+export function isObjectLike(value: any): value is object {
   return typeof value === 'object' && value !== null;
 }
