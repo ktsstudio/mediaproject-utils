@@ -15,7 +15,7 @@
       "types/*": ["types/*"],
       "hooks/*": ["hooks/*"]
     },
-    "types": ["axios", "react", "lodash", "node"]
+    "types": ["axios", "react", "node"]
   },
   "main": "./src/index.ts",
   "include": ["src"],
