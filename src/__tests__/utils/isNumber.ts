@@ -7,7 +7,8 @@ import { isObjectLike } from './isObjectLike';
  * @returns {boolean} Возвращает `true`, если значение является числом, иначе `false`.
  */
 export function isNumber(value: any): value is number {
-    return (
-      typeof value === 'number' || (isObjectLike(value) && getTag(value) === '[object Number]')
-    );
-  }
+  return (
+    typeof value === 'number' ||
+    (isObjectLike(value) && getTag(value) === '[object Number]')
+  );
+}

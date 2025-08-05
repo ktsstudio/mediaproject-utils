@@ -1,4 +1,5 @@
 import { act } from 'react-dom/test-utils';
+
 import { isNumber } from './isNumber';
 export enum WindowSizeEnum {
   big = 1200,

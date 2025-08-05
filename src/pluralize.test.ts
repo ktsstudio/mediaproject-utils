@@ -1,7 +1,8 @@
-import pluralize, { plural } from './pluralize';
 import { PluralizeWordsType } from 'types/pluralize';
-import {random} from '__tests__/utils/random';
-import {range} from '__tests__/utils/range';
+import { random } from '__tests__/utils/random';
+import { range } from '__tests__/utils/range';
+
+import pluralize, { plural } from './pluralize';
 
 const variants: PluralizeWordsType = {
   one: 'кот',

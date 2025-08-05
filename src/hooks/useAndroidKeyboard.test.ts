@@ -12,8 +12,9 @@ import {
   setWindowSize,
 } from '__tests__/utils/window';
 
+import noop from '../noop';
+
 import useAndroidKeyboard from './useAndroidKeyboard';
-import noop from "../noop";
 
 const KEYBOARD_HEIGHT_IN_PERCENT = 21;
 

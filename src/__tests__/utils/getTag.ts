@@ -1,4 +1,3 @@
-
 /**
  * Возвращает строковое представление типа значения `value`.
  * Если значение `value` равно `null` или `undefined`, возвращает соответствующую строку.
@@ -7,9 +6,9 @@
  * @param {any} value - Значение для получения его тега.
  * @returns {string} Возвращает строковое представление типа значения.
  */
-export function getTag(value: any):string {
-    if (value == null) {
-      return value === undefined ? '[object Undefined]' : '[object Null]'
-    }
-    return toString.call(value)
+export function getTag(value: any): string {
+  if (value == null) {
+    return value === undefined ? '[object Undefined]' : '[object Null]';
   }
+  return toString.call(value);
+}
