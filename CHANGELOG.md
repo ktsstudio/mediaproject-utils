@@ -46,7 +46,7 @@
 
 # v3.0.0
 
-- [-] markup перемещен в @ktsstudio/mediaproject-styles
+- [-] markup перемещен в @kts-specials/mediaproject-styles
 
 ## v2.1.0
 

@@ -1,14 +1,14 @@
 ![kts](./logo.png)
 
-# @ktsstudio/mediaproject-utils
+# @kts-specials/mediaproject-utils
 
 Общие утилиты для медиапроектов.
 
 ### Использование
 
-`npm install @ktsstudio/mediaproject-utils`
+`npm install @kts-specials/mediaproject-utils`
 
-`yarn add @ktsstudio/mediaproject-utils`
+`yarn add @kts-specials/mediaproject-utils`
 
 ### Утилиты
 
