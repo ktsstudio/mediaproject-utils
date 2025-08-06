@@ -3,7 +3,6 @@
  */
 
 import { renderHook } from '@testing-library/react';
-import { noop } from 'lodash';
 
 import {
   WindowSizeEnum,
@@ -12,6 +11,8 @@ import {
   mockWindowEventHooks,
   setWindowSize,
 } from '__tests__/utils/window';
+
+import noop from '../noop';
 
 import useAndroidKeyboard from './useAndroidKeyboard';
 

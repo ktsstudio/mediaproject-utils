@@ -1,6 +1,6 @@
 {
-  "name": "@ktsstudio/mediaproject-utils",
-  "version": "6.0.0",
+  "name": "@kts-specials/mediaproject-utils",
+  "version": "6.0.1",
   "author": "KTS Studio",
   "license": "MIT",
   "description": "Package with basic utils for media projects",
@@ -60,7 +60,6 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.0",
-    "@types/lodash": "^4.14.192",
     "@types/node": "^16.4.5",
     "@types/react": ">=17",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
@@ -76,7 +75,6 @@
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
     "lint-staged": "^11.0.0",
-    "lodash": "^4.17.21",
     "prettier": "^2.5.1",
     "react": ">=17",
     "react-dom": "^17.0.0 || ^18.0.0",
@@ -88,12 +86,14 @@
   },
   "peerDependencies": {
     "axios": "^0.24.0",
-    "lodash": "^4.17.21",
     "react": ">=17"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ktsstudio/front-utils.git"
+  },
+  "publishConfig": {
+    "registry": "https://nexus.team.ktsstudio.ru/repository/ktsnpm/"
   },
   "private": false,
   "bugs": {

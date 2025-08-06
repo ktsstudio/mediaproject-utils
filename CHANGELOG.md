@@ -1,3 +1,8 @@
+# v6.0.1
+
+- [*] Удален lodash из списка peer dependencies
+- [*] Добавлен хук usePreventDefaultTouchMove
+
 # v6.0.0
 
 - [*] checkDev: добавлен аргумент apiUrl
@@ -41,7 +46,7 @@
 
 # v3.0.0
 
-- [-] markup перемещен в @ktsstudio/mediaproject-styles
+- [-] markup перемещен в @kts-specials/mediaproject-styles
 
 ## v2.1.0
 
